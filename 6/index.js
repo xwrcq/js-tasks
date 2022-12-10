@@ -77,18 +77,18 @@ function renderBox() {
 	game.insertAdjacentElement('afterbegin', box);
 }
 
-function getRandom(min, max, ...amount) {
-	if (amount.length != 0) {
+function getRandom(min, max, amount) {
+	if (amount) {
 		let result = [];
 
-		for (let i = 0; i < amount[0]; i++) {
+		for (let i = 0; i < amount; i++) {
 			result[i] = Math.floor(min + Math.random() * (max + 1 - min));
 		}
 
 		return result;
-	} else {
-		return Math.floor(min + Math.random() * (max + 1 - min));
 	}
+
+	return Math.floor(min + Math.random() * (max + 1 - min));
 }
 
 function setGameScore() {
